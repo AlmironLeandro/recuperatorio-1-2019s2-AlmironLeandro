@@ -7,7 +7,7 @@ public abstract class Lugar {
     //Observacion: Podria haber creado una interfaz e implementarlas en los lugares nuevos(infierno,paraiso,purgatorio) para no hacer esta clase abstract.
     private List<Alma> almas;
     protected List<Alma> almasEscondidas = new ArrayList<Alma>();
-
+    public void agregarAlmaAlLugar(Alma a1){almas.add(a1);}
     public Lugar(List<Alma> almas) {
         this.almas = almas;
     }
@@ -17,7 +17,7 @@ public abstract class Lugar {
     }
 
     public abstract boolean puedeEsconder(Alma a1);
-    public abstract void esconderAlma(Alma a1);
+    public abstract boolean esconderAlma(Alma a1);
 
     public List<Alma> getAlmas() {
         return almas;

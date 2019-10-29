@@ -13,10 +13,16 @@ public class Purgatorio extends Lugar {
     }
     //aca iba a poner un Throw con una  Exception pero me quede corto de tiempo.
     @Override
-    public void esconderAlma(Alma a1){if(puedeEsconder(a1)){
-        almasEscondidas.add(a1);a1.setBondad(a1.getBondad()-5);a1.setValor(a1.getValor()-1);}
+    public boolean esconderAlma(Alma a1) {
+        if (puedeEsconder(a1)) {
+            almasEscondidas.add(a1);
+            a1.setBondad(a1.getBondad() - 5);
+            a1.setValor(a1.getValor() - 1);
+            return true;
+        }
     else {
         System.out.println("No se puedo esconder al alma");
+            return false;
     }
     }
 }

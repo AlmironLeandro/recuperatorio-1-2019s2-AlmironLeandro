@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class Demonio {
 
     private int maldad;
-    private List<Alma> almasCazadas = new ArrayList<>();
+    public List<Alma> almasCazadas = new ArrayList<>();
 
     public Demonio(int maldad) {
         this.maldad = maldad;
@@ -22,7 +22,7 @@ public abstract class Demonio {
         int almasAtormentadas=0;
         int almasCazadas=0;
     //Condicion Para poder cazarlo
-        if (alma.getValor() < this.maldad && puedoCazarlo(alma) && !lugar.puedeEsconder(alma)) {
+        if (alma.getValor() <this.maldad && puedoCazarlo(alma) && !(lugar.esconderAlma(alma))) {
             almasCazadas++;
             cazar(lugar, alma);
         } else {
