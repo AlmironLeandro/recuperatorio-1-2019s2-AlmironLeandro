@@ -21,8 +21,8 @@ public abstract class Demonio {
     protected void cazarOAtormentar(Lugar lugar, Alma alma) {
         int almasAtormentadas=0;
         int almasCazadas=0;
-
-        if (alma.getValor() < this.maldad && puedoCazarlo(alma)) {
+    //Condicion Para poder cazarlo
+        if (alma.getValor() < this.maldad && puedoCazarlo(alma) && !lugar.puedeEsconder(alma)) {
             almasCazadas++;
             cazar(lugar, alma);
         } else {
