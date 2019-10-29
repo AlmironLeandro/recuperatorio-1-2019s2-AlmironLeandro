@@ -17,4 +17,5 @@ public class Lugar {
     public void quitarAlma(Alma alma) {
         almas.remove(alma);
     }
+
 }
