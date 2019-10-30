@@ -52,5 +52,19 @@ public class DiabolicoTest {
         demonio.cazar(p1);
         assertEquals(demonio.almasCazadas.size(),1);
     }
-
+    @Test
+    public void pruebaArmas(){
+        DemonioFuego demonio = new DemonioFuego(30);
+        demonio.elegirArma(new ObtieneBallesta());
+        // 10 * 15 *0 = 0
+        assertEquals(demonio.getPoder(),0);
+        Infierno p1 = new Infierno();
+        AlmaSimple alma = new AlmaSimple(10,10,false);
+        AlmaSimple alma1 = new AlmaSimple(0,20,false);
+        p1.agregarAlmaAlLugar(alma);
+        p1.agregarAlmaAlLugar(alma1);
+        demonio.cazar(p1);
+        assertEquals(demonio.getPoder(),495);
+        assertEquals(demonio.almasCazadas.size(),1);
+    }
 }
