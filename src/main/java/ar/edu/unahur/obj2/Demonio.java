@@ -6,6 +6,23 @@ import java.util.List;
 public abstract class Demonio {
 
     private int maldad;
+    private ObtieneArma a1;
+
+    public int getMaldad() {
+        return maldad;
+    }
+
+    public void setMaldad(int maldad) {
+        this.maldad = maldad;
+    }
+
+    public void elegirArma(ObtieneArma a1) {
+        this.a1 = a1;
+    }
+    public int getPoder() {
+        return a1.poder() * maldad * almasCazadas.size();
+    }
+
     public List<Alma> almasCazadas = new ArrayList<>();
 
     public Demonio(int maldad) {
